@@ -1,5 +1,5 @@
 # STM32-based Smart Home Conditioning System
-Team: Zheng Zhang,3036381242; Yi Zhao,3036410445
+Team: Zheng Zhang <3036381242> Yi Zhao <3036410445>
 ## Introduction
 This project developed an indoor smart home system to collect data such as temperature, humidity, brightness, etc. And control desk lamps and fans and other devices to provide users with a better home experience. The key technologies involved include STM32 microcontrollers, various sensors for environmental monitoring, and relay modules for device control. In addition, on the web side, streamlit is used to visualize and analyze the collected data, while integrating artificial intelligence to enhance the user experience and promote health.
 ##  Prerequisites:
@@ -25,6 +25,8 @@ This project developed an indoor smart home system to collect data such as tempe
 7. LCD Display Mode
 
 ### Web
+Python Environment 
+
 ##  Step-by-Step Guide
 ### Hardware
 <a name="ole_link5"></a>**1. Hardware Connection**
@@ -33,11 +35,11 @@ This project developed an indoor smart home system to collect data such as tempe
 
 Connect to the sensor dock reserved by the stm32f103ze motherboard
 
-1. Light Intensity Sensor Connection 
+2. Light Intensity Sensor Connection 
 
 Use the photoresistor that comes with the stm32f103ze motherboard
 
-1. Fan Control 
+3. Fan Control 
 
 Fan <a name="ole_link7"></a>interface FI connected to microcontroller PA8
 
@@ -47,51 +49,74 @@ Fan interface VCC <a name="ole_link8"></a>connected to microcontroller 5V
 
 Fan interface GND connected to microcontroller GND
 
-1. LED Connection 
+4. LED Connection 
 
 LED <a name="ole_link9"></a>interface connected to microcontroller PA7
 
 The other LED interface connected to microcontroller GND
 
-1. <a name="ole_link6"></a>Other Connection 
+5. <a name="ole_link6"></a>Other Connection 
 
 The power supply port of the microcontroller is connected to the computer for power supply and serial port monitoring
 
 Connect ST-Link to program recording
 
-6 LCD Connection 
+6. LCD Connection 
 
 LCD is connected to the microcontroller through the microcontroller reserved interface
 
-**2. Hardware Connection**
-
-1\. System Initialization
-
-2\. Fan motor initialization
-
-3\. DHT11 Temperature/Humidity Sensor Initialization and Reading
-
-4\. Environmental Control Logic
-
-5\. Display Implementation
-
-**3. Compilation and Download**
+**2. Compilation and Download**
 
 1. Compile the project in STM32 IDE
 1. Connect STM32 to the computer via ST-Link
 1. Download the program to STM32
 
-**4. Debugging and Parameter Adjustment**
+**3. Debugging and Parameter Adjustment**
 
 1. Open the serial debugging assistant and set the baud rate to 115200
-1. Observe the temperature, humidity, and light intensity data
-1. Adjust the TEMP\_THRESHOLD and LIGHT\_THRESHOLD values according to actual conditions
+2. Observe the temperature, humidity, and light intensity data
+3. Adjust the TEMP\_THRESHOLD and LIGHT\_THRESHOLD values according to actual conditions
 
 ### Web
 
+import:
+```Python
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+import dashscope
+from dashscope import Generation
+import os
+import requests
+```
+
+
+*Export the exported data to CVS format using python for easy subsequent reading  
+*The streamlist framework is used to complete the display of temperature, humidity and brightness of the web front-end, and the optimal indoor environment is set according to the data for analysis and comparison  
+*Access to the Hong Kong Observatory's public API enables real-time outdoor temperature and humidity collection for easy comparison with indoor  
+*Access AI to form a chat bot, which is convenient for users to answer questions and give reasonable suggestions in real time when using the system  
+
+USE AI MODEL:
+
+```Python
+api_key=os.getenv("DASHSCOPE_API_KEY"),
+base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+```
+
+
 ## Conclusion
+
 ##  References
+Use streamlist for front-end presentation:
 https://streamlit.io/
+
+Use the Hong Kong Observatory API：
+https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=en
+
+Use QWEN-7B model:
+https://bailian.console.aliyun.com/?spm=5176.29597918.nav-v2-dropdown-menu-0.d_main_0_6.1eda7ca0LHZlDW&scm=20140722.M_10793437._.V_1#/model-market/detail/qwen-7b-chat
+
+
 ##  Acknowledgement
 ### Contribution Statement 
 ||  Zheng Zhang   | Yi Zhao  |
