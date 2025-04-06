@@ -129,6 +129,6 @@ https://bailian.console.aliyun.com/?spm=5176.29597918.nav-v2-dropdown-menu-0.d_m
 ||  Zheng Zhang   | Yi Zhao  |
 |  :----: | :----: |:----: |
 |Code ownership| [hardware](https://github.com/Yeyeyolo/AIOT-Tutorial-Writing/tree/main/aiot-hardware)| [web](https://github.com/Yeyeyolo/AIOT-Tutorial-Writing/tree/main/aiot-web) |
-|video| Shoot | Edit |
+|Video| Shoot | Edit |
 |Report| Hardware part | Others |
 |Github | - | Build and Improve|
