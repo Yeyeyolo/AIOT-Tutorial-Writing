@@ -1,5 +1,6 @@
 # STM32-based Smart Home Conditioning System
-Team: Zheng Zhang <3036381242> Yi Zhao <3036410445>
+Team:  Zheng Zhang <3036381242> 
+Yi Zhao <3036410445>
 ## Introduction
 This project developed an indoor smart home system to collect data such as temperature, humidity, brightness, etc. And control desk lamps and fans and other devices to provide users with a better home experience. The key technologies involved include STM32 microcontrollers, various sensors for environmental monitoring, and relay modules for device control. In addition, on the web side, streamlit is used to visualize and analyze the collected data, while integrating artificial intelligence to enhance the user experience and promote health.
 ##  Prerequisites:
@@ -79,7 +80,7 @@ LCD is connected to the microcontroller through the microcontroller reserved int
 
 ### Web
 
-import:
+IMPORT:
 ```Python
 import streamlit as st
 import pandas as pd
@@ -91,10 +92,12 @@ import requests
 ```
 
 
+
 *Export the exported data to CVS format using python for easy subsequent reading  
-*The streamlist framework is used to complete the display of temperature, humidity and brightness of the web front-end, and the optimal indoor environment is set according to the data for analysis and comparison  
+*The streamlit framework is used to complete the display of temperature, humidity and brightness of the web front-end, and the optimal indoor environment is set according to the data for analysis and comparison  
 *Access to the Hong Kong Observatory's public API enables real-time outdoor temperature and humidity collection for easy comparison with indoor  
 *Access AI to form a chat bot, which is convenient for users to answer questions and give reasonable suggestions in real time when using the system  
+
 
 USE AI MODEL:
 
@@ -106,8 +109,12 @@ base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
 
 ## Conclusion
 
+In this project, we developed a smart home system to enhance the user experience through real-time monitoring of environmental data and intelligent control of devices. The STM32 single chip microcomputer is the core of the system, which integrates temperature, humidity and light intensity sensors for environmental monitoring. The relay module controls lamps, fans and other equipment to help users create a more comfortable living environment.  
+We use the Streamlit framework to create an intuitive Web front end that displays environmental data and compares it to ideal indoor conditions to help users understand the state of the environment. In addition, the system is connected to the Hong Kong Observatory's public API to collect real-time outdoor environment data, which is convenient for users to compare with the indoor environment, so as to make more reasonable home adjustments. The introduction of artificial intelligence further improves the function of the system. AI can answer user questions in real time and provide personalized recommendations based on environmental data and user preferences. This interactive feature not only improves user satisfaction, but also helps users improve their living environment through timely suggestions and reminders.  
+Overall, this smart home system combines the advantages of hardware and software to provide users with a responsive and easy-to-use environment. In the future, the types of sensors and AI functions can be further optimized to achieve real-time data transmission and improve the convenience and practicality of the system.  
+
 ##  References
-Use streamlist for front-end presentation:
+Use streamlit for front-end presentation:
 https://streamlit.io/
 
 Use the Hong Kong Observatory API：
@@ -122,4 +129,6 @@ https://bailian.console.aliyun.com/?spm=5176.29597918.nav-v2-dropdown-menu-0.d_m
 ||  Zheng Zhang   | Yi Zhao  |
 |  :----: | :----: |:----: |
 |Code ownership| [hardware](https://github.com/Yeyeyolo/AIOT-Tutorial-Writing/tree/main/aiot-hardware)| [web](https://github.com/Yeyeyolo/AIOT-Tutorial-Writing/tree/main/aiot-web) |
-|| 单元格  | 单元格 |
+|video| Shoot | Edit |
+|Report| Hardware part | Others |
+|Github | - | Build and Improve|
